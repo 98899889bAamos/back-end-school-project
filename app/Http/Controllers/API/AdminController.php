@@ -96,6 +96,21 @@ class AdminController extends Controller
         ]);
     }
 
+    public function getIn(Request $req)
+    {
+        $admin= Admin::where('username',$req->username)->first();
+        if(!$admin || !Hash::check($req->password, $admin->password))
+        {
+            return response()->json([
+                'status'=> 404,
+                "error"=>"username or password is not matched"
+            ]);
+        }
+        return response()->json([
+            'status'=> 200,
+            'data'=>$admin
+        ]);
 
+    }
 
 }

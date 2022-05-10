@@ -24,8 +24,9 @@ Route::get('/students', [Student2Controller::class, 'beat']);
 Route::post('/add-student', [Student2Controller::class, 'come']);
 Route::put('/update-admin/{id}', [AdminController::class, 'updateAdmin']);
 Route::delete('/delete-admin/{id}', [AdminController::class, 'deleteAdmin']);
-Route::get('admins', [AdminController::class, 'head']);
-Route::get('edit-admin/{id}', [AdminController::class, 'nate']);
+Route::get('/admins', [AdminController::class, 'head']);
+Route::get('/edit-admin/{id}', [AdminController::class, 'nate']);
+Route::post('/login', [AdminController::class, 'getIn']);
 Route::post('/add-message', [ChatController::class, 'right']);
 
 Route::post('/add-admin', [AdminController::class, 'rude']);
